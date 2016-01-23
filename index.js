@@ -96,13 +96,9 @@ Cylon.robot({
 		console.log("send");
 		var response = thingShadows.update(myThingName,  mythingstate);
 		console.log(response);
-		thingShadows.publish('topic/CarCounter', JSON.stringify(mythingstate));
-		thingShadows.publish('arn:aws:sns:us-east-1:186120789172:CarAlert',
+		thingShadows.publish('topic/CarCounter', 
                   'Someone is using your parking lot!');
 	}
-
-	//thingShadows.publish('arn:aws:sns:us-east-1:186120789172:CarCounter', 
-        //                'Humidity is greater than 60% which is not desireable');
 
 
         // We loop through the faces and manipulate the image
