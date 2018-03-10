@@ -27,8 +27,8 @@ const isUndefined = require('./node_modules/aws-iot-device-sdk/common/lib/is-und
 
 function processTest( args ) {
 var thingShadows = awsIot.thingShadow({
-   keyPath: './certs/032ea8d26e-private.pem.key',
-  certPath: './certs/032ea8d26e-certificate.pem.crt',
+   keyPath: './certs/e3494d9936.private.pem.key',
+  certPath: './certs/e3494d9936-certificate.pem.crt',
     caPath: './certs/rootCA.pem',
   clientId: 'pi',
     region: 'us-east-1'
@@ -63,12 +63,12 @@ thingShadows
 
     if (args.testMode === 1)
     {
-       thingShadows.register( 'carcounter', { ignoreDeltas: true,
+       thingShadows.register( 'Hack4DFuture_QTPi', { ignoreDeltas: true,
                                               persistentSubscribe: true } );
     }
     else
     {
-       thingShadows.register( 'carcounter' );
+       thingShadows.register( 'Hack4DFuture_QTPi' );
     }
     var rgbLedLampState = { };
 
@@ -91,12 +91,12 @@ thingShadows
        {
           if (mobileAppOperation === 'update')
           {
-             clientToken = thingShadows[mobileAppOperation]('carcounter',
+             clientToken = thingShadows[mobileAppOperation]('Hack4DFuture_QTPi',
                                                             rgbLedLampState );
           }
           else // mobileAppOperation === 'get'
           {
-             clientToken = thingShadows[mobileAppOperation]('carcounter' );
+             clientToken = thingShadows[mobileAppOperation]('Hack4DFuture_QTPi' );
           }
           operationCallbacks[clientToken] = { operation: mobileAppOperation,
                                               cb: null };
@@ -111,7 +111,7 @@ thingShadows
 //
 // The device gets the latest state from the thing shadow after connecting.
 //
-          clientToken = thingShadows.get('carcounter');
+          clientToken = thingShadows.get('Hack4DFuture_QTPi');
           operationCallbacks[clientToken] = { operation: 'get', cb: null };
        }
        if (args.testMode === 1)
@@ -148,19 +148,19 @@ thingShadows
 thingShadows 
   .on('close', function() {
     console.log('close');
-    thingShadows.unregister( 'carcounter' );
+    thingShadows.unregister( 'Hack4DFuture_QTPi' );
   });
 thingShadows 
   .on('reconnect', function() {
     console.log('reconnect');
     if (args.testMode === 1)
     {
-       thingShadows.register( 'carcounter', { ignoreDeltas: true,
+       thingShadows.register( 'Hack4DFuture_QTPi', { ignoreDeltas: true,
                                               persistentSubscribe: true } );
     }
     else
     {
-       thingShadows.register( 'carcounter' );
+       thingShadows.register( 'Hack4DFuture_QTPi' );
     }
   });
 thingShadows 
