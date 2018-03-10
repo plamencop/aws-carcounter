@@ -125,8 +125,8 @@ const thingShadows = thingShadow({
 });
 */
 var thingShadows = awsIot.thingShadow({
-   keyPath: './certs/032ea8d26e-private.pem.key',
-  certPath: './certs/032ea8d26e-certificate.pem.crt',
+   keyPath: './certs/e3494d9936-private.pem.key',
+  certPath: './certs/e3494d9936-certificate.pem.crt',
     caPath: './certs/rootCA.pem',
   clientId: 'macbook',
     region: 'us-east-1'
