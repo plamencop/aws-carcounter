@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2015 Amazon.com, Inc. or its affilfiates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
 //node.js deps
 
 //npm deps
-var myThingName = 'carcounter';
+var myThingName = 'Hack4DFuture_QTPi';
 mythingstate = {
   "state": {
     "reported": {
@@ -96,7 +96,7 @@ Cylon.robot({
 		console.log("send");
 		var response = thingShadows.update(myThingName,  mythingstate);
 		console.log(response);
-		thingShadows.publish('topic/CarCounter', 
+		thingShadows.publish('topic/parkingFender', 
                   'Someone is using your parking lot!');
 	}
 
